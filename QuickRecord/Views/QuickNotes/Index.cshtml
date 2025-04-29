@@ -1,0 +1,37 @@
+﻿@model IEnumerable<QuickRecord.Models.QuickNote>
+@{
+    ViewData["Title"] = "快速紀錄";
+    var search = ViewData["Search"] as string;
+}
+
+<h1 class="mb-3">快速紀錄</h1>
+
+<form asp-action="Index" class="mb-4 d-flex">
+    <input name="search" value="@search" class="form-control me-2" placeholder="搜尋內容…" />
+    <button class="btn btn-outline-secondary">搜尋</button>
+</form>
+
+<form asp-action="Create" method="post" class="mb-4">
+    <div class="input-group">
+        <input name="content" class="form-control" placeholder="輸入隨手紀錄…" maxlength="500" required />
+        <button class="btn btn-primary">儲存</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>時間 (本地)</th>
+            <th>內容</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.CreatedUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@note.Content</td>
+            </tr>
+        }
+    </tbody>
+</table>
