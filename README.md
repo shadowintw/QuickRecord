@@ -53,14 +53,14 @@
 2. **設定機密 (dotnet user-secrets)**
    dotnet user-secrets init
 
-   # Azure AD
+   **Azure AD**
    dotnet user-secrets set "AzureAd:Instance" "https://login.microsoftonline.com/"
    dotnet user-secrets set "AzureAd:TenantId" "<TenantId>"
    dotnet user-secrets set "AzureAd:ClientId" "<AppId>"
    dotnet user-secrets set "AzureAd:ClientSecret" "<Secret>"
    dotnet user-secrets set "AzureAd:CallbackPath" "/signin-oidc"
    
-   # Connection String
+   **Connection String**
    dotnet user-secrets set "ConnectionStrings:MyDBConn" "Server=(localdb)\\MSSQLLocalDB;Database=QuickRecord;Trusted_Connection=True;"
 
 3. **資料庫遷移**
@@ -72,19 +72,20 @@
 ---
 
 ## 專案結構
+```text
 QuickRecord/
-├─ Controllers/
-│  └─ QuickNotesController.cs      <!-- CRUD + 權限 -->
-├─ Data/
-│  └─ AppDbContext.cs              <!-- EF Core DbContext -->
-├─ Models/
-│  └─ QuickNote.cs
-├─ Views/
-│  ├─ QuickNotes/
-│  └─ Shared/_Layout.cshtml        <!-- 登入狀態列 -->
-├─ wwwroot/
-├─ Program.cs                      <!-- 認證 + DI + Middlewares -->
-└─ README.md
+├── Controllers/
+│   └── QuickNotesController.cs    # CRUD + 權限
+├── Data/
+│   └── AppDbContext.cs           # EF Core DbContext
+├── Models/
+│   └── QuickNote.cs
+├── Views/
+│   ├── QuickNotes/
+│   └── Shared/_Layout.cshtml     # 登入狀態列
+├── wwwroot/
+├── Program.cs                    # 認證 + DI + Middlewares
+└── README.md
 
 
 ---
