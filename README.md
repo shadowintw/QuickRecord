@@ -10,12 +10,10 @@
 1. [功能特色](#功能特色)
 2. [開發環境需求](#開發環境需求)
 3. [快速開始 (本機)](#快速開始-本機)
-4. [Azure 部署步驟](#azure部署步驟)
-5. [專案結構](#專案結構)
-6. [重要環境變數](#重要環境變數)
-7. [分支策略](#分支策略)
-8. [常見問題](#常見問題)
-9. [授權](#授權)
+4. [專案結構](#專案結構)
+5. [重要環境變數](#重要環境變數)
+6. [分支策略](#分支策略)
+7. [授權](#授權)
 
 ---
 
@@ -73,20 +71,21 @@
 
 ---
 
-## 專業結構
+## 專案結構
 QuickRecord/
 ├─ Controllers/
-│  └─ QuickNotesController.cs  // CRUD + 權限
+│  └─ QuickNotesController.cs      <!-- CRUD + 權限 -->
 ├─ Data/
-│  └─ AppDbContext.cs         // EF Core DbContext
+│  └─ AppDbContext.cs              <!-- EF Core DbContext -->
 ├─ Models/
 │  └─ QuickNote.cs
 ├─ Views/
 │  ├─ QuickNotes/
-│  └─ Shared/_Layout.cshtml   // 登入狀態列
+│  └─ Shared/_Layout.cshtml        <!-- 登入狀態列 -->
 ├─ wwwroot/
-├─ Program.cs                 // 認證 + DI + Middlewares
+├─ Program.cs                      <!-- 認證 + DI + Middlewares -->
 └─ README.md
+
 
 ---
 
