@@ -50,7 +50,9 @@
    ```bash
    git clone https://github.com/your-org/QuickRecord.git
    cd QuickRecord
+   
 2. **設定機密 (dotnet user-secrets)**
+   ```bash
    dotnet user-secrets init
 
    **Azure AD**
@@ -63,10 +65,12 @@
    **Connection String**
    dotnet user-secrets set "ConnectionStrings:MyDBConn" "Server=(localdb)\\MSSQLLocalDB;Database=QuickRecord;Trusted_Connection=True;"
 
-3. **資料庫遷移**
+4. **資料庫遷移**
+   ```bash
    dotnet ef database update
 
-4. **Run**
+5. **Run**
+   ```bash
    dotnet run
 
 ---
@@ -86,7 +90,7 @@ QuickRecord/
 ├── wwwroot/
 ├── Program.cs                    # 認證 + DI + Middlewares
 └── README.md
-
+```
 
 ---
 
