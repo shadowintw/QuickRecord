@@ -14,6 +14,7 @@
 5. [重要環境變數](#重要環境變數)
 6. [分支策略](#分支策略)
 7. [授權](#授權)
+8. [Prompt](#Prompt)
 
 ---
 
@@ -114,3 +115,33 @@ QuickRecord/
 
 ## 授權
 本專案採用 MIT License，詳見 LICENSE。
+
+## Prompt
+### 需求說明
+我想建立一個新的 ASP.NET Core 8 MVC 應用程式，整體架構請**完全比照 QuickRecord** 範例，並符合下列條件：
+
+1. **專案名稱**：`{{ProjectName}}`
+2. **資料模型**  
+   {{列出每個實體 (Entity) 與欄位，例如：}}
+   - `TodoItem`：`Id (int, PK)`、`Title (string, 100)`、`IsDone (bool)`  
+   - `Category`：`Id`、`Name (string, 50)`
+3. **身份驗證**：Microsoft Entra ID (OpenID Connect)  
+   - 角色：`Admin`、`User`
+4. **資料庫**：EF Core + Azure SQL  
+   - 連線字串名稱固定 `ConnectionStrings:MyDBConn`
+5. **功能**  
+   - `Admin` 可 CRUD **所有** {{核心實體}}  
+   - `User` 僅可 CRUD 自己建立的資料
+6. **部署**：可發佈到 Azure App Service
+7. **輸出內容**  
+   - **(A)** 專案建立與設定步驟（VS 2022 畫面 + CLI 指令）  
+   - **(B)** 完整 `Program.cs`、`DbContext`、主要 Controller 與 View 範例程式碼  
+   - **(C)** 必要 `appsettings.json` / App Service 環境變數清單  
+   - **(D)** Azure SQL、防火牆與 Key Vault 設定說明  
+   - **(E)** 若有衝突或常見錯誤，提供排解指引
+
+> **注意**  
+> - 回覆請全部使用繁體中文。  
+> - 程式碼區塊請放在 <code>```csharp</code>、<code>```json</code> 等 Fenced Code Block 內。  
+> - 任何指令請標註對應終端機或 VS 2022 的操作。  
+
